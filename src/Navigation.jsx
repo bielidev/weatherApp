@@ -11,6 +11,7 @@ export default function Navigation() {
             <NavLink className={({isActive}) => buttonVariants({variant: `${isActive ? "default" : "outline"}`})} to="/weather">Weather</NavLink>
             <NavLink className={({isActive}) => buttonVariants({variant: `${isActive ? "default" : "outline"}`})} to="/map">Map</NavLink>
             <NavLink className={({isActive}) => buttonVariants({variant: `${isActive ? "default" : "outline"}`})} to="/about">About</NavLink>
+            <NavLink className={({isActive}) => buttonVariants({variant: `${isActive ? "default" : "outline"}`})} to="/favorites">Favorites</NavLink>
           </ul>
         </nav>
     </section>

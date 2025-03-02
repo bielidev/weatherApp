@@ -131,3 +131,62 @@
   height: 100%;
   width: 100%;
 }
+
+.icon {
+  width: 60px;
+  height: 60px;
+}
+
+@keyframes sun-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.clear-sky .icon {
+  animation: sun-rotate 10s linear infinite;
+}
+
+@keyframes cloud-move {
+  0% { transform: translateX(-10px); }
+  100% { transform: translateX(10px); }
+}
+
+.overcast-clouds .icon, .broken-clouds .icon, .scattered-clouds .icon {
+  animation: cloud-move 3s ease-in-out infinite alternate;
+}
+
+@keyframes rain-fall {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(10px); opacity: 0; }
+}
+
+.light-rain .icon, .moderate-rain .icon {
+  animation: rain-fall 0.5s infinite linear;
+}
+
+@keyframes thunder-flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.thunderstorm .icon {
+  animation: thunder-flash 0.7s infinite;
+}
+
+@keyframes snow-fall {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(10px); }
+}
+
+.snow .icon {
+  animation: snow-fall 2s infinite linear;
+}
+
+@keyframes fog-move {
+  0% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
+.fog .icon {
+  animation: fog-move 4s infinite alternate;
+}
