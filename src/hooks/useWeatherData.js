@@ -8,6 +8,14 @@ export const useWeatherData = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  const reset = () => {
+    setCity("")
+    setWeather(null)
+    setForecast([])
+    setLoading(false)
+    setError("")
+  }
+
   const fetchWeatherData = useCallback(async () => {
     if (!city) return;
     setLoading(true);
@@ -41,7 +49,9 @@ export const useWeatherData = () => {
     forecast,
     loading,
     error,
+    city,
     setCity,
-    fetchWeatherData
+    fetchWeatherData,
+    reset
   }
 }

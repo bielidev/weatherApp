@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
@@ -6,9 +7,31 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { useEffect, useState } from "react";
 
 const Favorites = () => {
-  const favorites = JSON.parse(localStorage.getItem("favs") || "[]");
+
+  const [favs, setFavs] = useState([])
+
+
+  const loadFavs = () => {
+    const favorites = JSON.parse(localStorage.getItem("favs") || "[]");
+    setFavs(favorites)
+  }
+
+
+  useEffect(() => {
+    loadFavs()
+  }, [])
+
+  
+
+  const removeFav = (id) => {
+    const newFavs = favs.filter(f => f.id !== id)
+    localStorage.setItem("favs", JSON.stringify(newFavs))
+
+    loadFavs()
+  }
 
   return (
     <div className="p-4">
@@ -20,15 +43,17 @@ const Favorites = () => {
           <TableHead>Nombre</TableHead>
           <TableHead>Latitud</TableHead>
           <TableHead>Longitud</TableHead>
+          <TableHead>Borrar</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        {favorites.map((f) => (
+        {favs.map((f) => (
           <TableRow key={f.id}>
             <TableCell>{f.id}</TableCell>
             <TableCell>{f.name}</TableCell>
             <TableCell>{f.coord.lat}</TableCell>
             <TableCell>{f.coord.lon}</TableCell>
+            <TableCell><Button variant="destructive" onClick={() => removeFav(f.id)}>Borrar</Button></TableCell>
           </TableRow>
         ))}
       </TableBody>

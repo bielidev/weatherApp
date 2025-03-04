@@ -1,4 +1,6 @@
+import { Input } from "@/components/ui/input";
 import { useWeatherData } from "../hooks/useWeatherData";
+import { Button } from "@/components/ui/button";
 
 const containerStyle = {
   width: "100%",
@@ -11,21 +13,25 @@ const containerStyle = {
 };
 
 export default function Weather() {
-
   const {city, loading, error, weather, forecast, setCity, fetchWeatherData} = useWeatherData()
 
+  const handleSearch = (e) => {
+    e.preventDefault()
+    setCity(e.target.value)
+  }
+
   return (
-    <div>
-      <h1>Weather Tracker</h1>
-      <div>
-        <input
+    <div className="p-4">
+      <h2 className="text-2xl font-semibold mb-2">Weather Tracker</h2>
+      <form onSubmit={handleSearch} className="flex gap-4 w-3/6">
+        <Input
           type="text"
           placeholder="Enter city"
           value={city}
-          onChange={(e) => setCity(e.target.value)}
-        />{" "}
-        <button onClick={fetchWeatherData}>Search</button>
-      </div>
+          onChange={handleSearch}
+        />
+        <Button onClick={fetchWeatherData}>Search</Button>
+      </form>
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
       {weather && (

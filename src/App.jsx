@@ -5,11 +5,12 @@ import Weather from './pages/Weather';
 import About from './pages/About';
 import Map from './pages/Map';
 import Favorites from './pages/Favorites';
+import { ThemeProvider } from '@/components/theme-provider';
 
 
 export default function App() {
   return (
-    <>
+    <ThemeProvider storageKey="vite-ui-theme">
      <Navigation></Navigation>
     <Routes>
       <Route path='/' element={<Home />} />
@@ -19,6 +20,6 @@ export default function App() {
       <Route path='/favorites' element={<Favorites />} />
       <Route path='/*' element={<Navigate to='/' />} />
     </Routes>
-    </>
+    </ThemeProvider>
   );
 }

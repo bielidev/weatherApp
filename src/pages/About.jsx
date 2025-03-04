@@ -1,7 +1,7 @@
 
 const About = () => {
   return (
-    <div>
+    <div className="p-4">
       <h2 >
         Acerca de esta aplicación
       </h2>
