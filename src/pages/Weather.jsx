@@ -1,19 +1,11 @@
 import { Input } from "@/components/ui/input";
 import { useWeatherData } from "../hooks/useWeatherData";
 import { Button } from "@/components/ui/button";
-
-const containerStyle = {
-  width: "100%",
-  margin: "50px auto", // Adds 50px margin to the top and centers horizontally
-  padding: "20px",
-  border: "1px solid #ccc",
-  borderRadius: "8px",
-  boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
-  backgroundColor: "#f9f9f9",
-};
+import { useHistoricData } from "../hooks/useHistoricData";
 
 export default function Weather() {
   const {city, loading, error, weather, forecast, setCity, fetchWeatherData} = useWeatherData()
+  const {fetchHistoricData, weather: historicData, loading: loadingHistoric, error: errorHistoric} = useHistoricData()
 
   const handleSearch = (e) => {
     e.preventDefault()
@@ -31,11 +23,14 @@ export default function Weather() {
           onChange={handleSearch}
         />
         <Button onClick={fetchWeatherData}>Search</Button>
+        {weather && (<Button onClick={() => fetchHistoricData(weather.coord.lat, weather.coord.lon)}>Get Historic Data</Button>)}
       </form>
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
-      {weather && (
-        <div style={containerStyle}>
+      <div className="flex gap-2">
+        <div className="w-full">
+        {weather && (
+        <div className="my-4 p-4 border-2 border-gray-300 dark:border-gray-400 rounded-lg shadow-md bg-gray-100 dark:bg-gray-600">
           <h2>Current Weather in {weather.name}</h2>
           <p>
             Temperature:{" "}
@@ -49,7 +44,7 @@ export default function Weather() {
         </div>
       )}
       {forecast.length > 0 && (
-        <div style={containerStyle}>
+        <div className="my-4 p-4 border-2 border-gray-300 dark:border-gray-400 rounded-lg shadow-md bg-gray-100 dark:bg-gray-600">
           <h2>5-Day Forecast</h2>
           {forecast.map((day, index) => (
             <div key={index}>
@@ -63,8 +58,12 @@ export default function Weather() {
           ))}
         </div>
       )}
+        </div>
+        <div className="w-full">
+
+        </div>
+      
+      </div>
     </div>
   );
 }
-
-

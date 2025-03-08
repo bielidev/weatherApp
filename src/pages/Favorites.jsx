@@ -35,7 +35,7 @@ const Favorites = () => {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl">Ciudades favoritas</h2>
+      <h2 className="text-2xl font-semibold mb-">My fav Cities</h2>
       <Table>
       <TableHeader>
         <TableRow>

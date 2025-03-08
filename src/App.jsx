@@ -6,6 +6,7 @@ import About from './pages/About';
 import Map from './pages/Map';
 import Favorites from './pages/Favorites';
 import { ThemeProvider } from '@/components/theme-provider';
+import Compare from './pages/Compare';
 
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
       <Route path='/map' element={<Map />} />
       <Route path='/about' element={<About />} />
       <Route path='/favorites' element={<Favorites />} />
+      <Route path='/compare' element={<Compare />} />
       <Route path='/*' element={<Navigate to='/' />} />
     </Routes>
     </ThemeProvider>

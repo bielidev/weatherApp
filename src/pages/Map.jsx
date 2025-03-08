@@ -71,7 +71,7 @@ console.log(favs)
             Borrar
           </Button>
         )}
-        <Button type="submit">Buscar</Button>
+        <Button type="submit">Search</Button>
       </form>
       {loading || listLoading ? (
         <Skeleton className="h-[100%] w-full" />

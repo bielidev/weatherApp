@@ -47,6 +47,14 @@ export default function Navigation() {
           >
             Favorites
           </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              buttonVariants({ variant: `${isActive ? "default" : "outline"}` })
+            }
+            to="/compare"
+          >
+            Compare
+          </NavLink>
         </ul>
       </nav>
       <ModeToggle />
