@@ -37,11 +37,11 @@ const { city: city2, loading: loading2, error: error2, weather: weather2, foreca
     setChartConfig({
         [weather.id]: {
           label: weather.name,
-          color: "#2563eb",
+          color: "#D1D5DB",
         },
         [weather2.id]: {
           label: weather2.name,
-          color: "#60a5fa",
+          color: "#4B5563",
         },
       })
     setCompareData(forecast.map((f, idx) => ({

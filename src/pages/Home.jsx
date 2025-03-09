@@ -16,12 +16,12 @@ const Home = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-gray-100 to-gray-300 p-6 relative overflow-hidden">
       <img src="/public/logo.png" alt="logo" />
-      <Card className="max-w-2xl w-full shadow-lg border border-black rounded-2xl bg-white z-10">
-        <CardContent className="p-6 text-center">
-          <h2 className="text-4xl font-bold text-black mb-4">
+      <Card className="max-w-2xl w-full shadow-lg bg-white dark:bg-black z-10 dark:shadow-lg border-0">
+        <CardContent className="p-6 text-center text-black dark:text-white">
+          <h2 className="text-4xl font-bold text-black mb-4 dark:text-white">
             Your daily dose of forescast
           </h2>
-          <div className="rounded-lg overflow-hidden border border-black shadow-md">
+          <div className="bg-white rounded-lg shadow-lg">
             <ReactPlayer
               className="mx-auto"
               ref={playerRef}
