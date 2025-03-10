@@ -62,7 +62,7 @@ console.log(favs)
       >
         <Input
           type="text"
-          placeholder="Busca una ciudad..."
+          placeholder="Search a city..."
           value={city}
           onChange={(e) => setCity(e.target.value)}
         />

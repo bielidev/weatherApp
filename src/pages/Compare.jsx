@@ -74,7 +74,7 @@ const { city: city2, loading: loading2, error: error2, weather: weather2, foreca
             <div className="w-full">
               {weather && (
                 <div className="my-4 p-4 border-2 border-gray-300 dark:border-gray-400 rounded-lg shadow-md bg-gray-100 dark:bg-gray-600">
-                  <h2>Current Weather in {weather.name}</h2>
+                  <h2 className="text-lg font-semibold">Current Weather in {weather.name}</h2>
                   <p>
                     Temperature:{" "}
                     <span style={{ fontWeight: "bold", fontSize: "1.2em" }}>
@@ -88,7 +88,7 @@ const { city: city2, loading: loading2, error: error2, weather: weather2, foreca
               )}
               {forecast.length > 0 && (
                 <div className="my-4 p-4 border-2 border-gray-300 dark:border-gray-400 rounded-lg shadow-md bg-gray-100 dark:bg-gray-600">
-                  <h2>5-Day Forecast</h2>
+                  <h2 className="text-lg font-semibold">5-Day Forecast</h2>
                   {forecast.map((day, index) => (
                     <div key={index}>
                       <p>Date: {new Date(day.dt_txt).toLocaleDateString()}</p>
@@ -120,7 +120,7 @@ const { city: city2, loading: loading2, error: error2, weather: weather2, foreca
             <div className="w-full">
               {weather2 && (
                 <div className="my-4 p-4 border-2 border-gray-300 dark:border-gray-400 rounded-lg shadow-md bg-gray-100 dark:bg-gray-600">
-                  <h2>Current Weather in {weather2.name}</h2>
+                  <h2 className="text-lg font-semibold">Current Weather in {weather2.name}</h2>
                   <p>
                     Temperature:{" "}
                     <span style={{ fontWeight: "bold", fontSize: "1.2em" }}>
@@ -133,7 +133,7 @@ const { city: city2, loading: loading2, error: error2, weather: weather2, foreca
               )}
               {forecast2.length > 0 && (
                 <div className="my-4 p-4 border-2 border-gray-300 dark:border-gray-400 rounded-lg shadow-md bg-gray-100 dark:bg-gray-600">
-                  <h2>5-Day Forecast</h2>
+                  <h2 className="text-lg font-semibold">5-Day Forecast</h2>
                   {forecast2.map((day, index) => (
                     <div key={index}>
                       <p>Date: {new Date(day.dt_txt).toLocaleDateString()}</p>

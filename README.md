@@ -41,8 +41,8 @@ Este PR introduce la implementación de React Router para navegación multi-pág
 
 ## Pruebas Realizadas
 - [x] Navegación fluida entre páginas.
-- [x]Almacenamiento y recuperación de ciudades favoritas desde localStorage.
-- [x]Integración correcta de mapa y visualización de datos meteorológicos.
-- [x]Funcionalidad de modo oscuro operativa.
-- []Recuperación de datos climáticos históricos. (Esto no se ha podido implementar ya que es necesario una [cuenta de estudiante en OpenWeather](https://docs.openweather.co.uk/our-initiatives/student-initiative))
-- [x]Comparación de clima entre múltiples ciudades.
+- [x] Almacenamiento y recuperación de ciudades favoritas desde localStorage.
+- [x] Integración correcta de mapa y visualización de datos meteorológicos.
+- [x] Funcionalidad de modo oscuro operativa.
+- [x] Histórico de búsquedas.
+- [x] Comparación de clima entre dos ciudades.
